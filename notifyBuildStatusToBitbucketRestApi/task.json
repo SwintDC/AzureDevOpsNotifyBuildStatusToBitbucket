@@ -4,7 +4,7 @@
     "friendlyName": "Notify build status to Bitbucket",
     "description": "Invoke a Bitbucket REST API as a part of your pipeline to update the build status for the currently built git commit. This is a server-based (agentless) task and can therefore only be used in an agentless job.",
     "author": "Swint De Coninck",
-    "helpMarkDown": "[Learn more about this task](https://go.microsoft.com/fwlink/?linkid=870236)",
+    "helpMarkDown": "[Learn more about this task](https://marketplace.visualstudio.com/items?itemName=SwintDC.notify-build-status-to-bitbucket)",
     "category": "Azure Pipelines",
     "visibility": [
         "Build"
@@ -16,7 +16,7 @@
     "version": {
         "Major": 0,
         "Minor": 9,
-        "Patch": 6
+        "Patch": 10
     },
     "instanceNameFormat": "Notify build status to Bitbucket: $(bitbucketBuildStatus)",
     "groups": [],
@@ -75,7 +75,7 @@
         "HttpRequest": {
             "Execute": {
                 "EndpointId": "TaskInputs['connectedServiceName']",
-                "EndpointUrl": "$(endpoint.url)/rest/build-status/1.0/commits/$(Build.SourceVersion)",
+                "EndpointUrl": "$(endpoint.url)rest/build-status/1.0/commits/$(Build.SourceVersion)",
                 "Method": "POST",
                 "Body": "{\"state\": \"$(bitbucketBuildStatus)\",\"key\": \"$(bitbucketBuildKey)\",\"name\":\"$(bitbucketBuildName)\",\"url\": \"$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)&_a=summary\",\"description\": \"$(bitbucketBuildDescription)\"}",
                 "Headers": "{\"Content-Type\":\"application/json\"}",

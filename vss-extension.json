@@ -2,10 +2,10 @@
     "manifestVersion": 1,
     "id": "notify-build-status-to-bitbucket",
     "publisher": "SwintDC",
-    "version": "0.9.6",
+    "version": "0.9.10",
     "name": "Notify build status to Bitbucket",
     "description": "An Azure DevOps extension containing only 1 agentless task 'Notify build status to Bitbucket' which performs an API call to a Bitbucket server to update the build status for the commit being built.",
-    "public": false,
+    "public": true,
     "categories": ["Azure Pipelines"],
     "targets": [
         {
@@ -29,11 +29,6 @@
     ],
     "files": [
         {
-            "path": "node_modules/vss-web-extension-sdk/lib",
-            "addressable": true,
-            "packagePath": "lib"
-        },
-        {
             "path": "notifyBuildStatusToBitbucketRestApi"
         }
     ],
@@ -41,5 +36,9 @@
         "details": {
             "path": "readme.md"
         }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/SwintDC/AzureDevOpsNotifyBuildStatusToBitbucket"
     }
 }

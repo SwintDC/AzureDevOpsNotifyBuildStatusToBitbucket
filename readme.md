@@ -1,11 +1,11 @@
 # 1. Contents of extension
 ## 1.1. Tasks
 ### 1.1.1. Notify build status to Bitbucket
-Click this link to go to the source: [./notifyBuildStatusToBitbucketRestApi](./notifyBuildStatusToBitbucketRestApi).  
-Invoke a Bitbucket REST API as a part of your pipeline to update the build status for the currently git commit being built. This is a server-based (agentless) task and can therefore only be used in an agentless job.
+Click this link to go to the source of this task: [link](https://github.com/SwintDC/AzureDevOpsNotifyBuildStatusToBitbucket/tree/main/notifyBuildStatusToBitbucketRestApi).  
+Invoke a Bitbucket REST API as a part of your pipeline to update the build status for the current git commit being built. This is a server-based (agentless) task and can therefore only be used in an agentless job.
 
 # 2. How to use
-1. Create a generic service connection in the project settings of your Azure DevOps project. The server url should be your Bitbucket base url and could for example be `https://yourorganization.televic.com`. The task then adds the following path `/rest/build-status/1.0/commits/<commit-hash>` to the configured url to perform the REST API call. The configured url should therefore not end with a slash `"/"`. Also enter a username and password for the service connection.
+1. Create a generic service connection in the project settings of your Azure DevOps project. The server url should be your Bitbucket base url and could for example be `https://bitbucket.yourorganization.com/`. The task then adds the following path `rest/build-status/1.0/commits/<commit-hash>` to the configured url to perform the REST API call. Also enter a username and password for the service connection.
 2. Install the extension with name "Notify build status to Bitbucket" in your Azure DevOps organization. This extension can be found here: https://marketplace.visualstudio.com/items?itemName=SwintDC.notify-build-status-to-bitbucket.
 3. In your pipeline, inside a server-based (agentless) job, search the marketplace for the task with name "Notify build status to Bitbucket" and insert it in your pipeline.
 4. Fill in all parameters. In the parameter "Generic service connection", pick the previously created generic service connection.
@@ -20,6 +20,8 @@ Invoke a Bitbucket REST API as a part of your pipeline to update the build statu
 6. upload the .vsix file to the Azure DevOps Marketplace
 7. test the extension
 8. create a pull request for your changes
+
+> Icons were created with Paint.NET, the .pdn files are meant to be edited with Paint.NET.
 
 # 4. Sources used when developing this extension
 - https://developer.atlassian.com/server/bitbucket/how-tos/updating-build-status-for-commits/  
